@@ -1,4 +1,7 @@
 import random
 
-print("Welcome to the Number Guessing Game!")
-print("")
+def game_intro():
+    print("Welcome to the Number Guessing Game!")
+    player_name = input("What's your name?\n")
+    
+game_intro()
