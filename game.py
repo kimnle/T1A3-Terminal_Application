@@ -16,3 +16,9 @@ def start():
     options = ["Play", "Rules", "Scores", "Quit"]
     option, index = pick(options)
     return option
+
+# Function: player chooses difficulty after selecting play
+def difficulty():
+    difficulty_options = ["Easy", "Medium", "Hard"]
+    difficulty_option, index = pick(difficulty_options)
+    return difficulty_option
