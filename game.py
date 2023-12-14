@@ -1,5 +1,6 @@
 # Import
 import random
+from pick import pick
 
 # Function: start screen
 def start():
@@ -12,3 +13,6 @@ def start():
        \_____|   \_____/   |_____|  |_____/  |_____/      |__|    |_|  |_|  |_____|        |_|  |_|
     """)
     player_name = input("What's your name?\n")
+    options = ["Play", "Rules", "Scores", "Quit"]
+    option, index = pick(options)
+    return option
