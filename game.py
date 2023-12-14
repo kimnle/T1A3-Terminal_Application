@@ -29,5 +29,5 @@ def difficulty():
         attempts = 10
     else:
         range = 1000
-        attempts = 1
+        attempts = 15
     
