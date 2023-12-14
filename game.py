@@ -1,8 +1,14 @@
+# Import
 import random
 
-def game_intro():
-    print("Welcome to the Number Guessing Game!")
+# Function: start screen
+def start():
+    print("""
+        _____    _     _    _____    _____    _____      ______    _    _    _____          _    _
+       /  ___|  | |   | |  |  ___|  /  ___|  /  ___|    |__  __|  | |  | |  |  ___|      __| |__| |__
+      |  /___   | |   | |  | |__   |  |___  |  |___       |  |    | |__| |  | |__       |__   __   __|
+      | ||_  |  | |   | |  |  __|   \___  \  \___  \      |  |    |  __  |  |  __|       __| |__| |__
+      |  \_| |  | \___/ |  | |___    ___|  |  ___|  |     |  |    | |  | |  | |___      |__   __   __|
+       \_____|   \_____/   |_____|  |_____/  |_____/      |__|    |_|  |_|  |_____|        |_|  |_|
+    """)
     player_name = input("What's your name?\n")
-    difficulty = input(f"Hey {player_name}, choose your difficulty level. Easy, medium or hard?\n")
-
-game_intro()
