@@ -30,6 +30,10 @@ def difficulty():
         difficulty.max_range = 1000
         difficulty.attempts = 15
 
+# Function: generate random number
+def random_number():
+    number = random.randint(1, difficulty.max_range)
+
 # Function: get player's guess
 def guess():
     for n in range(difficulty.attempts):
