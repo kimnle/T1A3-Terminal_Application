@@ -12,22 +12,33 @@ def start():
       |  \_| |  | \___/ |  | |___    ___|  |  ___|  |     |  |    | |  | |  | |___      |__   __   __|
        \_____|   \_____/   |_____|  |_____/  |_____/      |__|    |_|  |_|  |_____|        |_|  |_|
     """)
-    player_name = input("What's your name?\n")
-    options = ["Play", "Rules", "Scores", "Quit"]
-    option, index = pick(options)
-    return option
+    start.player_name = input("What's your name?\n")
+    start_options = ["Play", "Rules", "Scores", "Quit"]
+    start_option, index = pick(start_options)
 
 # Function: player chooses difficulty after selecting play
 def difficulty():
     difficulty_options = ["Easy", "Medium", "Hard"]
     difficulty_option, index = pick(difficulty_options)
-    return difficulty_option
     if difficulty_option == "Easy":
-        range = 10
-        attempts = 5
+        difficulty.max_range = 10
+        difficulty.attempts = 5
     elif difficulty_option == "Medium":
-        range = 100
-        attempts = 10
+        difficulty.max_range = 100
+        difficulty.attempts = 10
     else:
-        range = 1000
-        attempts = 15
+        difficulty.max_range = 1000
+        difficulty.attempts = 15
+
+# Function: get player's guess
+def guess():
+    for n in range(difficulty.attempts):
+        while True:
+            try:
+                player_guess = int(input(f"Guess a number between 1 and {difficulty.max_range}\n"))
+                if 1 <= player_guess <= difficulty.max_range:
+                    return player_guess
+                else:
+                    print("Please enter a number between the specified range")
+            except ValueError:
+                print("Please enter a number")
