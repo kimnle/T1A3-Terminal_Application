@@ -36,13 +36,25 @@ def random_number():
 
 # Function: get player's guess
 def guess():
-    for n in range(difficulty.attempts):
+    for guess.n in range(difficulty.attempts):
         while True:
             try:
-                player_guess = int(input(f"Guess a number between 1 and {difficulty.max_range}\n"))
-                if 1 <= player_guess <= difficulty.max_range:
-                    return player_guess
+                guess.player_guess = int(input(f"Guess a number between 1 and {difficulty.max_range}\n"))
+                if 1 <= guess.player_guess <= difficulty.max_range:
+                    return guess.player_guess
                 else:
                     print("Please enter a number between the specified range")
             except ValueError:
                 print("Please enter a number")
+
+# Function: checks player's guess
+def check_guess():
+    while True:
+        if guess.player_guess < guess.n:
+            return "Your guess is too low"
+        elif guess.player_guess > guess.n:
+            return "Your guess is too high"
+        else:
+            return "You guessed right!!"
+            break
+
