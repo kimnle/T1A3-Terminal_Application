@@ -6,3 +6,4 @@ if __name__ == "__main__":
     game.difficulty()
     game.random_number()
     game.guess()
+    game.check_guess()
