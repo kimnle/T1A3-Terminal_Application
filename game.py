@@ -21,6 +21,7 @@ def start():
 def difficulty():
     difficulty_options = ["Easy", "Medium", "Hard"]
     difficulty_option, index = pick(difficulty_options)
+    return difficulty_option
     if difficulty_option == "Easy":
         range = 10
         attempts = 5
@@ -30,4 +31,3 @@ def difficulty():
     else:
         range = 1000
         attempts = 15
-    
