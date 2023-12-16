@@ -67,3 +67,15 @@ def verify_guess():
         # else:
         #     return "You're freezing"
         #     break
+
+# Function: plays game
+def play():
+    attempts = 0
+    win = False
+    while attempts < difficulty_level.attempts:
+        attempts += 1
+        guess = take_guess()
+        correct_guess = verify_guess(guess, random_number.number)
+        
+        if correct_guess == "You guessed right!!":
+            
