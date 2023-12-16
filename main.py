@@ -7,3 +7,4 @@ if __name__ == "__main__":
     game.random_number()
     game.take_guess()
     game.verify_guess()
+    game.lets_play()
