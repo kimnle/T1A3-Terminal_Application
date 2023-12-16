@@ -2,8 +2,8 @@
 import game
 
 if __name__ == "__main__":
-    game.start()
-    game.difficulty()
+    game.start_screen()
+    game.difficulty_level()
     game.random_number()
-    game.guess()
-    game.check_guess()
+    game.take_guess()
+    game.verify_guess()
