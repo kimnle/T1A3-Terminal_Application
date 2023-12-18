@@ -27,11 +27,11 @@ def choose_difficulty():
 
     return attempts
 
-# Function: calculates score
-def calc_score(current_points, number_to_be_guessed, current_guess):
-    points_lost = number_to_be_guessed - current_guess
-    current_points = abs(current_points - points_lost)
-    return current_points
+# # Function: calculates score
+# def calc_score(current_points, number_to_be_guessed, current_guess):
+#     points_lost = number_to_be_guessed - current_guess
+#     current_points = abs(current_points - points_lost)
+#     return current_points
 
 # Function: saves scores
 def save_scores():
