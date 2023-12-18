@@ -27,12 +27,22 @@ def choose_difficulty():
 
     return attempts
 
-def calc_score():
-    points_lost = number - guess
-    points_won = points_won - points_lost
-    return points_won
+# Function: calculates score
+def calc_score(current_points, number_to_be_guessed, current_guess):
+    points_lost = number_to_be_guessed - current_guess
+    current_points = abs(current_points - points_lost)
+    return current_points
 
+# Function: saves scores
+def save_scores():
+    try:
+        with open("scores.txt", "r") as scores_file:
+            scores = scores_file.read()
+    except FileNotFoundError:
+        print(f"Play to add your scores!")
 
+    with open("scores.txt", "a") as scores_files:
+        scores_files.write(f"{difficulty} difficulty - you guessed the number in {attempts} attempts\n")
 
 # #Import
 # import game
