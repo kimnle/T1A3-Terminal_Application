@@ -27,6 +27,13 @@ def choose_difficulty():
 
     return attempts
 
+def calc_score():
+    points_lost = number - guess
+    points_won = points_won - points_lost
+    return points_won
+
+
+
 # #Import
 # import game
 
