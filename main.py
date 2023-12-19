@@ -56,6 +56,9 @@ def play_game(attempts, min_range, max_range):
     for round in range(1, attempts + 1):
         print(f"Attempt {round} out of {attempts}")
 
+    while True:
+        
+
 # #Import
 # import game
 
