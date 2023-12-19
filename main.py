@@ -20,10 +20,16 @@ def choose_difficulty():
 
     if difficulty == "easy":
         attempts = 5
+        min_range = 1
+        max_range = 10
     elif difficulty = "medium":
         attempts = 10
+        min_range = 1
+        max_range = 100
     else:
         attempts = 15
+        min_range = 1
+        max_range = 1000
 
     return attempts
 
@@ -43,6 +49,12 @@ def save_scores():
 
     with open("scores.txt", "a") as scores_files:
         scores_files.write(f"{difficulty} difficulty - you guessed the number in {attempts} attempts\n")
+
+def play_game(attempts, min_range, max_range):
+    number_to_be_guessed = random.randint(min_range, max_range)
+    
+    for round in range(1, attempts + 1):
+        print(f"Attempt {round} out of {attempts}")
 
 # #Import
 # import game
