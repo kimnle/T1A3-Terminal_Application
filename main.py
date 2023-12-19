@@ -12,11 +12,11 @@ def choose_difficulty():
         try:
             difficulty = input("").lower()
             if difficulty != "easy" or "medium" or "hard":
-                print("Please enter one of the three difficulties")
+                print("Enter one of the three difficulties")
                 continue
             break
             except ValueError:
-                print("Please enter one of the three difficulties")
+                print("Enter one of the three difficulties")
 
     if difficulty == "easy":
         attempts = 5
@@ -45,19 +45,43 @@ def save_scores():
         with open("scores.txt", "r") as scores_file:
             scores = scores_file.read()
     except FileNotFoundError:
-        print(f"Play to add your scores!")
+        print(f"Play to add your scores!!")
 
     with open("scores.txt", "a") as scores_files:
-        scores_files.write(f"{difficulty} difficulty - you guessed the number in {attempts} attempts\n")
+        scores_files.write(f"{difficulty} difficulty: you guessed the number in {attempts} attempts.\n")
 
+# Function: plays game
 def play_game(attempts, min_range, max_range):
     number_to_be_guessed = random.randint(min_range, max_range)
     
     for round in range(1, attempts + 1):
         print(f"Attempt {round} out of {attempts}")
 
-    while True:
+        while True:
+            try:
+                player_guess = int(input(f"Enter a number between {min_range} and {max_range}\n"))
+                if player_guess < min_range or player_guess > max_range:
+                    print("Enter a number between the specified range")
+                    continue
+                break
+            except ValueError:
+                print("Enter a valid number")
+            
+        if player_guess == number_to_be_guessed:
+            print(f"You guessed the number in {attempts} attempts!!")
+            save_scores()
+            break
+        else:
+            if player_guess > number_to_be_guessed:
+                print("Your guess is too high")
+            elif player_guess < number_to_be_guessed:
+                print("Your guess is too low")
         
+        if round == attempts:
+            print("You've ran out of attempts!!")
+            print(f"The correct number is {number_to_be_guessed}")
+    
+    print("Game over!!")
 
 # #Import
 # import game
